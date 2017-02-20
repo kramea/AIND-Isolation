@@ -423,7 +423,7 @@ class Project1Test(unittest.TestCase):
                 method, test_depth, expected_moves[idx // 2], move))
 
     @timeout(20)
-    # @unittest.skip("Skip alpha-beta test.")  # Uncomment this line to skip test
+    #@unittest.skip("Skip alpha-beta test.")  # Uncomment this line to skip test
     def test_alphabeta(self):
         """ Test CustomPlayer.alphabeta
 
@@ -467,6 +467,9 @@ class Project1Test(unittest.TestCase):
             num_explored_valid = board.counts[0] == counts[idx][0]
             num_unique_valid = board.counts[1] == counts[idx][1]
 
+            #print(board.counts[0], counts[idx][0])
+            #print(board.counts[1], counts[idx][1])
+
             self.assertTrue(num_explored_valid, WRONG_NUM_EXPLORED.format(
                 method, test_depth, counts[idx][0], board.counts[0]))
 
@@ -478,7 +481,7 @@ class Project1Test(unittest.TestCase):
 
 
     @timeout(20)
-    # @unittest.skip("Skip iterative deepening test.")  # Uncomment this line to skip test
+    #@unittest.skip("Skip iterative deepening test.")  # Uncomment this line to skip test
     def test_get_move(self):
         """ Test iterative deepening in CustomPlayer.get_move by placing an
         agent on the game board and performing ID minimax search, which
